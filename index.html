@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Методы исключения интервалов</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Выберите метод:</h1>
+    <form id="methodForm">
+      <label>
+        <input type="radio" name="method" value="bisection" checked>
+        Деление интервала пополам
+      </label>
+      <label>
+        <input type="radio" name="method" value="dichotomy">
+        Дихотомия
+      </label>
+      <label>
+        <input type="radio" name="method" value="golden">
+        Золотое сечение
+      </label>
+      <label>
+        <input type="radio" name="method" value="fibonacci">
+        Метод Фибоначчи
+      </label>
+      <button id="button1" type="button">Начать вычисление</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
