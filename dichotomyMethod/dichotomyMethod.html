@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dichotomyMethod.css">
+  <title>Метод Дихотомии</title>
+</head>
+<body>
+  <div class="container">
+    <p id="exit" class="back-to-main">X</p>
+    <h1>Метод Дихотомии</h1>
+    <form id="goldenSectionForm">
+      <label for="a">Начальная точка A:</label>
+      <input type="number" id="a" name="a" required step="any">
+
+      <label for="b">Конечная точка B:</label>
+      <input type="number" id="b" name="b" required step="any">
+
+      <label for="function">Функция f(x):</label>
+      <input type="text" id="function" name="function" placeholder="Введите функцию">
+
+      <button id="startGolden" type="button">Вычислить</button>
+      <button id="saveValues" type="button">Сохранить значения</button>
+      <button id="loadValues" type="button">Загрузить значения</button>
+
+      <div id="result"></div>
+
+      <div class="demo">
+        <input type="checkbox" id="hd-1" class="hide"/>
+        <label for="hd-1" >Нажмите здесь, чтобы увидеть примеры функций</label>
+        <div>
+            <label>Тестовая функция №1</label>
+            <p>-1 * Math.exp(1)^-x * Math.log(x)</p>
+            <label>Тестовая функция №2</label>
+            <p>2 * x^2 + 3 * Math.exp(1)^-x</p>
+            <label>Тестовая функция №3</label>
+            <p>x^4 - 14*x^3 + 60*x^2 - 70*x</p>
+        </div>
+    </div>
+
+
+    </form>
+  </div>
+  <script src="dichotomyMethod.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</body>
+</html>

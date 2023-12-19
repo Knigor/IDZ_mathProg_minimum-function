@@ -8,6 +8,12 @@ function getMethod() {
 
     if (someMethod == 'golden'){
         document.location.replace("/goldenMethod/goldenMethod.html");
+    } else if (someMethod == 'bisection'){
+        document.location.replace("/bisectionMethod/bisection.html");
+    } else if (someMethod == 'dichotomy'){
+        document.location.replace("/dichotomyMethod/dichotomyMethod.html"); 
+    } else if (someMethod == 'fibonacci'){
+        document.location.replace("/fibonacciMethod/fibonacciMethod.html"); 
     }
 
     console.log("Выбран метод: ",someMethod);
