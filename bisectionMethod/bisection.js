@@ -15,6 +15,8 @@ let startGolden = document.getElementById("startGolden");
 let exitMain = document.getElementById("exit");
 
 
+let minFx = Infinity;
+
 exitMain.addEventListener("click", () => {
   document.location.replace("/");
 })
@@ -95,11 +97,12 @@ startGolden.addEventListener("click",function(){
                     break;
                 }
             }
-
+            minFx = Math.min(minFx, fx1, fx2);
         }
 
         output += "/////////////////////////////////////////\n";
-        output += "Минимум функции равен: " + xmin.toFixed(3);
+        output += "Точка минимума функции: " + xmin.toFixed(3);
+        output += "\nМинимальное значение функции: " + minFx.toFixed(3) + "\n";
 
         function generateUniqueFilename(extension = 'txt') {
             const timestamp = new Date().getTime();

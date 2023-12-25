@@ -10,6 +10,8 @@ let startGolden = document.getElementById("startGolden");
 
 let exitMain = document.getElementById("exit");
 
+let minFx = Infinity;
+
 exitMain.addEventListener("click", () => {
   document.location.replace("/");
 });
@@ -62,6 +64,11 @@ startGolden.addEventListener("click", function () {
         output += `Шаг: ${count},\n L = ${L};\n R = ${R};\n`;
         output += "Интервал:\n[a;b]:  " + `[${a};${b}]\n`;
 
+        const fxL = targetFunction(L);
+        const fxR = targetFunction(R);
+
+        minFx = Math.min(minFx, fxL, fxR);
+
         if (targetFunction(L) < targetFunction(R)) {
           b = R;
           R = L;
@@ -82,8 +89,9 @@ startGolden.addEventListener("click", function () {
     
 
     const result = fibonacciSearch(a, b, n);
-    output += "\n/////////////////////////";
+    output += "\n/////////////////////////\n";
     output += "Точка минимума: " + result + "\n";
+    output += "Минимальное значение функции: " + minFx.toFixed(3) + "\n";
 
     function generateUniqueFilename(extension = 'txt') {
       const timestamp = new Date().getTime();

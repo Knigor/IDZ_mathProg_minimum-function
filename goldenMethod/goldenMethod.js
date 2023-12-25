@@ -7,7 +7,7 @@ let loadValuesButton = document.getElementById("loadValues");
 let saveFunctionButton = document.getElementById("saveFunction");
 let insertTestFunctionButton = document.getElementById("insertTestFunction");
 
-
+let minFx = Infinity; // Начальное значение бесконечности
 
 
 let startGolden = document.getElementById("startGolden");
@@ -82,10 +82,13 @@ startGolden.addEventListener("click", function () {
                 break;
             }
         }
+
+        minFx = Math.min(minFx, fx1, fx2);
     }
 
     output += "\nКонечный интервал: " + `[${a.toFixed(3)}],[${b.toFixed(3)}]\n`;
-    output += "Среднее значение: " + ((a + b) / 2).toFixed(3);
+    output += "Точка минимума функции: " + ((a + b) / 2).toFixed(3);
+    output += "\nМинимальное значение функции: " + minFx.toFixed(3) + "\n";
 
 
     function generateUniqueFilename(extension = 'txt') {
